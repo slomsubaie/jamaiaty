@@ -1,0 +1,14 @@
+node_modules/
+.turbo/
+.next/
+dist/
+.expo/
+*.log
+.env
+.env.local
+.env*.local
+apps/mobile/.env
+supabase/.temp/
+supabase/.branches/
+.DS_Store
+

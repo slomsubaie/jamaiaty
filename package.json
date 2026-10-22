@@ -1,0 +1,31 @@
+{
+  "name": "jamaiah",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "npm run dev -w web",
+    "dev:mobile": "npm run start -w mobile",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "db:push": "supabase db push",
+    "db:types": "supabase gen types typescript --linked --schema public | (echo '// Generated from the live database: npm run db:types (do not edit by hand).' && cat) > packages/shared/src/database.types.ts",
+    "test:db": "node --test supabase/tests/*.test.mjs",
+    "functions:deploy": "supabase functions deploy --use-api",
+    "config:push": "supabase config push",
+    "test": "npm run test -w @jamaiah/shared && npm run test:db"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.5.9",
+    "supabase": "^2",
+    "turbo": "^2"
+  },
+  "overrides": {
+    "react": "19.2.3",
+    "react-dom": "19.2.3"
+  },
+  "packageManager": "npm@11.19.0"
+}

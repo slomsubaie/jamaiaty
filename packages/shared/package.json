@@ -1,0 +1,21 @@
+{
+  "name": "@jamaiah/shared",
+  "version": "0.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --test src/*.test.ts"
+  },
+  "dependencies": {
+    "zod": "^4"
+  },
+  "devDependencies": {
+    "@supabase/supabase-js": "^2",
+    "typescript": "^5"
+  },
+  "peerDependencies": {
+    "@supabase/supabase-js": "^2"
+  }
+}
